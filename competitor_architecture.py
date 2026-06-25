@@ -5,37 +5,32 @@ from typing import List, Dict, Any, Tuple
 from skills.arc_skill import ARCSkill
 from skills.math_skill import MathSkill
 from skills.tabular_skill import TabularSkill
+from skills.optimization_skill import OptimizationSkill
+from skills.validation_skill import ValidationSkill
 
 class CompetitorArchitecture:
     """
-    Enhanced Competitor Architecture with Dynamic Skills.
+    Sovereign Competitor Architecture.
+    A unified framework for Kaggle competition excellence.
     """
     def __init__(self):
         self.skills = {
             "arc": ARCSkill(),
             "math": MathSkill(),
-            "tabular": TabularSkill()
+            "tabular": TabularSkill(),
+            "opt": OptimizationSkill(),
+            "val": ValidationSkill()
         }
 
-    def solve_arc(self, task: Dict[str, Any]) -> List[List[List[int]]]:
-        """Orchestrates ARC solving using ARCSkill."""
-        skill = self.skills["arc"]
-        # Logic: find best kernel (using Surfing Search logic integrated here)
-        # For brevity, we focus on the skill orchestration
-        return []
+    def optimize_model(self, model_name: str):
+        """Applies optimization strategies to a given model."""
+        return self.skills["opt"].get_4bit_config()
 
-    def solve_math(self, problem: str, attempts: List[str]) -> Any:
-        """Orchestrates Math solving using MathSkill."""
-        skill = self.skills["math"]
-        answers = [self._extract_numerical_answer(a) for a in attempts]
-        return skill.select_consensus_answer(answers)
-
-    def _extract_numerical_answer(self, text: str) -> int:
-        """Mock extraction logic."""
-        import re
-        match = re.search(r'\d+', text)
-        return int(match.group()) if match else 0
+    def validate_pipeline(self, X, y, model_factory):
+        """Runs robust validation for the current solution."""
+        return self.skills["val"].run_stratified_cv(X, y, model_factory)
 
 if __name__ == "__main__":
     arch = CompetitorArchitecture()
-    print("[*] Enhanced Architecture Loaded with Skills:", list(arch.skills.keys()))
+    print("[*] Sovereign Architecture Initialized with all Skills.")
+    print("Available Skills:", list(arch.skills.keys()))
