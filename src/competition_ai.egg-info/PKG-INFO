@@ -8,4 +8,6 @@ Requires-Dist: scipy
 Requires-Dist: torch
 Requires-Dist: transformers
 Requires-Dist: bitsandbytes
+Requires-Dist: kagglehub
+Requires-Dist: mcp
 Dynamic: requires-dist

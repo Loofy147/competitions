@@ -13,5 +13,7 @@ setup(
         "torch",
         "transformers",
         "bitsandbytes",
+        "kagglehub",
+        "mcp",
     ],
 )
