@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: competition_ai
+Version: 1.0.0
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: torch
+Requires-Dist: transformers
+Requires-Dist: bitsandbytes
+Requires-Dist: kagglehub
+Requires-Dist: mcp
+Dynamic: requires-dist
